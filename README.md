@@ -9,6 +9,13 @@ To install this example application, run the following commands:
 git clone https://github.com/gidesegid/nodeJs_react_typescript.git
 
 This will install a local copy of the project. 
+
+##### First is first:There are two backend folders.
+##### The first backend folder (backend) is node js server written in es6 based,node js express (no typescript).
+##### The second backend folder(backendWithTypescript) is node js server written in es6 based, node js express and typescript.
+
+To see a sample in a browser you need to run any one or maybe both of the servers.
+
 There are three main folders: the first folder is for the backend(nodejs server) and second folder is for the backend with typescript(node js server) and the third folder is  frontend react typescript(client).
 
 At each folders you have to install the npm package by "npm install".
