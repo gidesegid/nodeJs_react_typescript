@@ -5,14 +5,20 @@ Prerequisites: Node.js.
 
 ## Getting Started
 To install this example application, run the following commands:
-
+```bash
 git clone https://github.com/gidesegid/nodeJs_react_typescript.git
 
+Go to specific folder and run
+npm install
+```
 This will install a local copy of the project. 
 
-##### First is first:There are two backend folders.
-##### The first backend folder (backend) is node js server written in es6 based,node js express (no typescript).
-##### The second backend folder(backendWithTypescript) is node js server written in es6 based, node js express and typescript.
+```bash
+First is first:There are two backend folders.
+The first backend folder (backend) is node js server written in es6 based and node js express (no typescript).
+The second backend folder(backendWithTypescript) is node js server written in es6 based and node js express and typescript.
+```
+After running npm install on any folder then all necessary dependencies will be installed and you are good to go.
 
 To see a sample in a browser you need to run any one or maybe both of the servers.
 
@@ -26,3 +32,10 @@ At each folders you have to install the npm package by "npm install".
 ### Run react typescript(frontend)
 
 
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
