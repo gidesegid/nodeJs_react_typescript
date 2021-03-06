@@ -1,0 +1,45 @@
+.detailsContainer{
+    display: flex;
+    margin-left:30px;
+    margin-top:100px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.detailsContainer article{
+    display: flex;
+    flex-direction: column;
+}
+.detailsContainer div{
+   margin-left:10px;
+   margin-right: 10px;
+   margin-bottom: 10px;
+}
+.detailsContainer span{
+    margin-left:10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+ }
+ /* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+    .detailsContainer{
+        display: flex;
+        margin-left:10px;
+        margin-top:10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    .detailsContainer article{
+        display: flex;
+        flex-direction: column;
+    }
+    .detailsContainer div{
+       margin-left:10px;
+       margin-right: 10px;
+       margin-bottom: 10px;
+    }
+    .detailsContainer span{
+        margin-left:10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+     }
+  }

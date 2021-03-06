@@ -1,0 +1,13 @@
+.navbar { background-color: rgb(198, 195, 201); }
+.navbar-nav, .navbar-light .nav-link {
+    color: #9FFFCB;
+  }
+  .navbar-brand {
+    font-size: 1.4em;
+    color: #9FFFCB;
+  }
+  .form-center {
+    position: absolute !important;
+    left: 25%;
+    right: 25%;
+  }
