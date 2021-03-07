@@ -4,6 +4,9 @@ import {useState,useEffect} from 'react'
 import { User } from '../Users/UsersInfo';
 import './Details.css'
 export interface DetailsProps extends RouteComponentProps<{id:string;}>{}
+export interface ErrorBoundry{
+  message:string;
+}
 let url:string="http://localhost:5000/user/"
 const Details:React.FC<DetailsProps>=({history,match:{params:{id}}})=>{
   const [user,setUser]=useState<User>({
@@ -13,19 +16,30 @@ const Details:React.FC<DetailsProps>=({history,match:{params:{id}}})=>{
     email:'',
     gender:'',
     ip_address:''
-  })
-  
+  });
+  const [hasError, setHasError] = useState(false);
   useEffect(()=>{
     const getUserDetails=async()=>{
+      try {
         let r=await fetch(url+id);
         let user=await r.json();
-        setUser(user)
+        if(user.length==0){
+          setHasError(true)
+        }else{
+          setUser(user)
+          setHasError(false)
+        }
+        
+      } catch (error) {
+        setHasError(true)
+      }
     }
     getUserDetails()
   },[id])
     return(
         <div className="detailsContainer">
            <section className="row my-5">
+             {hasError ? <p>There is something wrong</p>:""}
             <article className="col-md-12">
                     <h4 className="card-title">
                       Email: {user.email}
@@ -36,8 +50,9 @@ const Details:React.FC<DetailsProps>=({history,match:{params:{id}}})=>{
                             <span><strong>Gender :</strong>{user.gender}</span>
                             <span><strong>Ip address :</strong>{user.ip_address}</span>
                     </div>
-                   <button onClick={()=>history.goBack()} className="btn btn-primary btn-block shadow mx-auto">Go back</button>
+                  
             </article>
+            <button onClick={()=>history.goBack()} className="btn btn-primary btn-block shadow mx-auto">Go back</button>
         </section>
         </div>
     )

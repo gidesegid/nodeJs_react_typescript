@@ -5,9 +5,11 @@ import Details from './components/Details/Details'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router } from "react-router-dom";
 import { NavigationBar } from './components/Navbar/Navbar';
+
 const App:React.FC=props=>{
   return(
     <div className="home">
+      
       <BrowserRouter>
         <React.Fragment>
           <Router>

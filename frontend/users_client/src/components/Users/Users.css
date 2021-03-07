@@ -1,25 +1,27 @@
 .usersContainer{
    display: flex;
-   width: 100vh;
+   width: 600px;
    height: 500px;
    overflow-y: scroll;
-   margin-top:100px;
+   margin-top:20px;
    margin-left: 20px;
    margin-right:10px;
    margin-bottom: 10px;
    background-color:rgb(235, 233, 228)
 }
 .usersContainer ul{
-    margin-top:10px;
     margin-left: 30px;
+    font-size: 14px;
 }
 @media screen and (max-width: 992px) {
     .usersContainer{
+        width: 400px;
         margin-top:10px;
         margin-left: 10px;
         margin-right:10px;
         margin-bottom: 10px;
-        background-color:rgb(235, 233, 228)
+        background-color:rgb(235, 233, 228);
+        font-size: 8px;
      }
      .usersContainer ul{
          margin-top:10px;
