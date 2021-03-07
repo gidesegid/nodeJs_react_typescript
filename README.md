@@ -1,4 +1,4 @@
-# Example App Using Node, TypeScript, and React
+# Sample list of users Using Node, TypeScript, and React
 This example app shows how to create a simple users list and their details  using Node and TypeScript, as well as a frontend to interact with it using React typescript.
 
 clone the repo 
