@@ -1,10 +1,7 @@
 import express,{Application,Request,Response,NextFunction} from 'express'
-import {default as data} from './MOCK_DATA.json'
-let collectionOfUsers=new Array()
-data.filter((user:any)=>{
-    collectionOfUsers.push({id:user.id,email:user.email})
-})
+import router from './routes/main';
 const app:Application=express()
+app.use(express.json());
 app.use((req:Request, res:Response, next:NextFunction) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
@@ -15,17 +12,7 @@ app.use((req:Request, res:Response, next:NextFunction) => {
     }
     next();
 });
-app.get('/',(req:Request,res:Response,next:NextFunction)=>{
-    res.send(collectionOfUsers)
-})
-app.get('/user/:id',(req:Request,res:Response,next:NextFunction)=>{
-    let userId:String=req.params.id
-    data.find((user:any)=>{
-        if(user.id==userId){
-            res.send(user)
-        }
-    })
-})
+app.use(router);
 app.listen(5000,()=>{
     console.log("Server is running")
 })

@@ -4,12 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const MOCK_DATA_json_1 = __importDefault(require("./MOCK_DATA.json"));
-let collectionOfUsers = new Array();
-MOCK_DATA_json_1.default.filter((user) => {
-    collectionOfUsers.push({ id: user.id, email: user.email });
-});
+const main_1 = __importDefault(require("./routes/main"));
 const app = express_1.default();
+app.use(express_1.default.json());
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
@@ -19,17 +16,7 @@ app.use((req, res, next) => {
     }
     next();
 });
-app.get('/', (req, res, next) => {
-    res.send(collectionOfUsers);
-});
-app.get('/user/:id', (req, res, next) => {
-    let userId = req.params.id;
-    MOCK_DATA_json_1.default.find((user) => {
-        if (user.id == userId) {
-            res.send(user);
-        }
-    });
-});
+app.use(main_1.default);
 app.listen(5000, () => {
     console.log("Server is running");
 });

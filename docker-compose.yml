@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  backend:
+    image: "a36312350fa3"
+    ports:
+      - "5003:5000"
+  frontend:
+    image: "c6b904a50630"
+    ports:
+      - "3000:3000"
+    links:
+      - "backend"

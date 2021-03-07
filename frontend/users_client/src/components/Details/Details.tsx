@@ -4,7 +4,7 @@ import {useState,useEffect} from 'react'
 import { User } from '../Users/UsersInfo';
 import './Details.css'
 export interface DetailsProps extends RouteComponentProps<{id:string;}>{}
-
+let url:string="http://localhost:5000/user/"
 const Details:React.FC<DetailsProps>=({history,match:{params:{id}}})=>{
   const [user,setUser]=useState<User>({
     id:0,
@@ -14,12 +14,13 @@ const Details:React.FC<DetailsProps>=({history,match:{params:{id}}})=>{
     gender:'',
     ip_address:''
   })
-  const getUserDetails=async()=>{
-      let r=await fetch(`http://localhost:5000/user/${id}`);
-      let user=await r.json();
-      setUser(user)
-  }
+  
   useEffect(()=>{
+    const getUserDetails=async()=>{
+        let r=await fetch(url+id);
+        let user=await r.json();
+        setUser(user)
+    }
     getUserDetails()
   },[id])
     return(

@@ -11,10 +11,11 @@ export interface User{
     ip_address:string
    
 };
+let url:string="http://localhost:5000"
 const UsersInfo:React.FC=(props)=>{
   const [users,setUsers]=useState<User[]>([]);
   const getListOfUsers=async()=>{
-      let r=await fetch('http://localhost:5000')
+      let r=await fetch(url)
       let users=await r.json()
       setUsers(users)
   }
