@@ -4,9 +4,6 @@ import {useState,useEffect} from 'react'
 import { User } from '../Users/UsersInfo';
 import './Details.css'
 export interface DetailsProps extends RouteComponentProps<{id:string;}>{}
-export interface ErrorBoundry{
-  message:string;
-}
 let url:string="http://localhost:5000/user/"
 const Details:React.FC<DetailsProps>=({history,match:{params:{id}}})=>{
   const [user,setUser]=useState<User>({
@@ -53,10 +50,12 @@ const Details:React.FC<DetailsProps>=({history,match:{params:{id}}})=>{
                     </div>
                   
             </article>
-            <button onClick={()=>history.goBack()} className="btn btn-primary btn-block shadow mx-auto">Go back</button>
+            <button onClick={()=>history.goBack()} className="btn btn-primary btn-block shadow mx-auto" data-testid="btnTestId">Go back</button>
         </section>
         </div>
     )
 }
 
 export default Details
+
+
