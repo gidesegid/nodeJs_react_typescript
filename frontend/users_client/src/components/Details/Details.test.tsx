@@ -8,3 +8,6 @@ it('renders details without crashing', () => {
         location={location}
         history={history}/>, div);
 });
+/*
+yet other part of the component will be continue testing here below
+*/
