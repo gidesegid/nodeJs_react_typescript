@@ -22,8 +22,6 @@ After cloning the repository at the root folders run:
 ```bash
 npm install
 ```
-NB: The data in MOCK_DATA.json file came from "https://www.mockaroo.com/". It is a random data generator website.
-
 After running npm install, all necessary dependencies will be installed and you are good to go.
 
 To see the sample in a browser you need to run the server and the client react server.
@@ -61,7 +59,7 @@ So these are the routes(two apis) that you can see with some results on the brow
 localhost:5000
 localhost:5000/user/20
 ```
-you can change localhost:5000/user/20<------ to any number between 1 and 20.This numbers is the ids of users in the mock data json.
+you can change localhost:5000/user/20<------ to any number between 1 and 100.This numbers is the ids of users in the mock data json.
 
 
 

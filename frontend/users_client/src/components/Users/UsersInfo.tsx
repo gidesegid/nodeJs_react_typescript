@@ -8,8 +8,8 @@ export interface User{
     last_name:string,
     email:string,
     gender:string,
-    ip_address:string
-   
+    country:string,
+    job_title:string
 };
 let url:string="http://localhost:5000"
 const UsersInfo:React.FC=(props)=>{

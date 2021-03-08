@@ -15,7 +15,8 @@ const Details:React.FC<DetailsProps>=({history,match:{params:{id}}})=>{
     last_name:'',
     email:'',
     gender:'',
-    ip_address:''
+    country:'',
+    job_title:''
   });
   const [hasError, setHasError] = useState(false);
   useEffect(()=>{
@@ -29,7 +30,6 @@ const Details:React.FC<DetailsProps>=({history,match:{params:{id}}})=>{
           setUser(user)
           setHasError(false)
         }
-        
       } catch (error) {
         setHasError(true)
       }
@@ -48,7 +48,8 @@ const Details:React.FC<DetailsProps>=({history,match:{params:{id}}})=>{
                             <span><strong>First Name :</strong>{user.first_name}</span>
                             <span><strong>Last Name :</strong>{user.last_name}</span>
                             <span><strong>Gender :</strong>{user.gender}</span>
-                            <span><strong>Ip address :</strong>{user.ip_address}</span>
+                            <span><strong>Country :</strong>{user.country}</span>
+                            <span><strong>job_title :</strong>{user.job_title}</span>
                     </div>
                   
             </article>
