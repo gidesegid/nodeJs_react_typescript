@@ -1,13 +1,14 @@
 import * as React from 'react';
 import {RouteComponentProps} from 'react-router-dom'
 import {useState,useEffect} from 'react'
-import { User } from '../Users/UsersInfo';
+import {User} from '../../models/model'
+import {url} from '../../CommonVariablesAcrossAllComponents/CommonVariablesAcrossAllComponents'
 import './Details.css'
 export interface DetailsProps extends RouteComponentProps<{id:string;}>{}
-let url:string="http://localhost:5000/user/"
+
 const Details:React.FC<DetailsProps>=({history,match:{params:{id}}})=>{
   const [user,setUser]=useState<User>({
-    id:0,
+    id:null,
     first_name:'',
     last_name:'',
     email:'',
@@ -19,7 +20,7 @@ const Details:React.FC<DetailsProps>=({history,match:{params:{id}}})=>{
   useEffect(()=>{
     const getUserDetails=async()=>{
       try {
-        let r=await fetch(url+id);
+        let r=await fetch(`${url}/user/${id}`);
         let user=await r.json();
         if(user.length==0){
           setHasError(true)

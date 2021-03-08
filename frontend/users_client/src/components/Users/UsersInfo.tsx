@@ -2,16 +2,8 @@ import * as React from 'react';
 import {useState,useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import './Users.css'
-export interface User{
-    id:number,
-    first_name:string,
-    last_name:string,
-    email:string,
-    gender:string,
-    country:string,
-    job_title:string
-};
-let url:string="http://localhost:5000"
+import {User} from '../../models/model'
+import {url} from '../../CommonVariablesAcrossAllComponents/CommonVariablesAcrossAllComponents'
 const UsersInfo:React.FC=(props)=>{
   const [users,setUsers]=useState<User[]>([]);
   const [error,setError]=useState(false)

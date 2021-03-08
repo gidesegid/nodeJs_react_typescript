@@ -1,7 +1,8 @@
 import Details, { DetailsProps } from './Details';
 import * as ReactDOM from 'react-dom'
 import {HistoryLocationMatch} from '../HistoryLocationMatch'
-const { history, location, match } = HistoryLocationMatch('http://localhost:3000/:id/details', { id: '1' });
+import {url} from '../../CommonVariablesAcrossAllComponents/CommonVariablesAcrossAllComponents'
+const { history, location, match } = HistoryLocationMatch(`${url}/:id/details`, { id: '1' });
 it('renders details without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<Details match={match}
