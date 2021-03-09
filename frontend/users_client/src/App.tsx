@@ -9,7 +9,6 @@ import { NavigationBar } from './components/Navbar/Navbar';
 const App:React.FC=props=>{
   return(
     <div className="home">
-      
       <BrowserRouter>
         <React.Fragment>
           <Router>

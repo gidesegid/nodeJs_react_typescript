@@ -1,7 +1,7 @@
 import express,{Application,Request,Response,NextFunction} from 'express'
 import {default as data} from '../model/MOCK_DATA.json'
 //
-let someInfoOfUser=new Array()
+let someInfoOfUser:Array<object>=[]
 //get data based on specific fields 
 data.filter((user)=>{
     someInfoOfUser.push({id:user.id,email:user.email})
